@@ -1,0 +1,114 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+body
+{
+    font-family: $font-primary;
+}
+
+.nav
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 7%;
+
+    &__nav1
+    {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        @include break-point(tablet)
+        {
+            display: none;
+        }
+    }
+
+    &__nav2
+    {
+        display: none;
+
+        @include break-point(tablet)
+        {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+    }
+
+    &__list
+    {
+        list-style-type: none;
+        display: inline-block;
+    }
+
+    &__item
+    {
+        color: $dark-grayish-blue;
+        text-decoration: none;
+        font-weight: map-get($weights, regular);
+        padding: 0 .7rem;
+    }
+
+    &__menu 
+    {
+        z-index: 1;
+    }
+
+    &__logo
+    {
+        z-index: -1;
+    }
+
+    &__profile
+    {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        z-index: -1;
+    }
+
+    &__avatar
+    {
+        width: 30px;
+    }
+}
+
+.navbar
+{
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #f1f1f1;
+    position: absolute;
+    top: 0;   
+    z-index: -1; 
+    transform: translateX(-300px);
+
+    &.expand
+    {
+        transform: translateX(0px);
+    }
+
+    @include break-point(tablet){
+        display: none;
+    }
+
+
+    &__items
+    {
+    list-style-type: none;
+    padding: 4rem 1.5rem; 
+    }
+
+    &__item
+    {
+        display: block;
+        color: $black;
+        text-decoration: none;
+        font-weight: map-get($weights, bold);
+        padding: .6rem 0;
+    }
+}

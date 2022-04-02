@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+}
+.nav__nav1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .nav__nav1 {
+    display: none;
+  }
+}
+.nav__nav2 {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .nav__nav2 {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+.nav__list {
+  list-style-type: none;
+  display: inline-block;
+}
+.nav__item {
+  color: hsl(219deg, 9%, 45%);
+  text-decoration: none;
+  font-weight: 400;
+  padding: 0 0.7rem;
+}
+.nav__menu {
+  z-index: 1;
+}
+.nav__logo {
+  z-index: -1;
+}
+.nav__profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  z-index: -1;
+}
+.nav__avatar {
+  width: 30px;
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #f1f1f1;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  transform: translateX(-300px);
+}
+.navbar.expand {
+  transform: translateX(0px);
+}
+@media screen and (min-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+.navbar__items {
+  list-style-type: none;
+  padding: 4rem 1.5rem;
+}
+.navbar__item {
+  display: block;
+  color: hsl(0deg, 0%, 0%);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.6rem 0;
+}
+
+.container {
+  width: 100%;
+  margin-top: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+.container__sliders {
+  display: flex;
+  width: 400%;
+  height: 400px;
+}
+.container__slider {
+  width: 100%;
+}
+.container__image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+.container__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+}
+.container__btn--left {
+  right: 1rem;
+}
+.container__btn--right {
+  left: 1rem;
+}
+.container__icon-previous, .container__icon-next {
+  width: 10px;
+}
+
+/*# sourceMappingURL=main.css.map */

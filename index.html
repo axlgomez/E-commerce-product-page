@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="build/style/main.css">
+    <script src="/src/scripts/main.js" defer></script>
+    <title>E-commerce product page</title>
+</head>
+<body>
+
+    <header class="nav">
+        <div class="nav__nav1">
+            <i class="nav__menu fa-solid fa-bars" id="menu"></i>
+            <img class="nav__logo" src="/build/images/logo.svg" alt="logo">
+        </div>
+        <div class="nav__nav2">
+            <img class="nav__logo" src="/build/images/logo.svg" alt="logo">
+            <nav class="nav__navbar">
+                <li class="nav__list"><a class="nav__item" href="#">Collections</a></li>
+                <li class="nav__list"><a class="nav__item" href="#">Men</a></li>
+                <li class="nav__list"><a class="nav__item" href="#">Women</a></li>
+                <li class="nav__list"><a class="nav__item" href="#">About</a></li>
+                <li class="nav__list"><a class="nav__item" href="#">Contact</a></li>
+            </nav>
+        </div>
+        <div class="nav__profile">
+            <img class="nav__cart" src="/build/images/icon-cart.svg" alt="cart">
+            <img class="nav__avatar" src="/build/images/image-avatar.png" alt="avatar">
+        </div>
+    </header>
+
+    <nav class="navbar" id="myNav">
+        <ul class="navbar__items">
+        <li class="navbar_list"><a class="navbar__item" href="#">Collections</a></li>
+        <li class="navbar_list"><a class="navbar__item" href="#">Men</a></li>
+        <li class="navbar_list"><a class="navbar__item" href="#">Women</a></li>
+        <li class="navbar_list"><a class="navbar__item" href="#">About</a></li>
+        <li class="navbar_list"><a class="navbar__item" href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <div class="container">
+            <div class="container__sliders" id="slider">
+                <div class="container__slider">
+                    <img class="container__image" src="/build/images/image-product-1.jpg" alt="product-1">
+                </div>
+                <div class="container__slider">
+                    <img class="container__image" src="/build/images/image-product-2.jpg" alt="product-2">
+                </div>
+                <div class="container__slider">
+                    <img class="container__image" src="/build/images/image-product-3.jpg" alt="product-1">
+                </div>
+                <div class="container__slider">
+                    <img class="container__image" src="/build/images/image-product-4.jpg" alt="product-4">
+                </div>
+            </div>
+            
+            <div class="container__btn container__btn--right" id="btn-right">
+                <img class="container__icon-previous" src="/build/images/icon-previous.svg" alt="previous">
+            </div>
+            <div class="container__btn container__btn--left" id="btn-right">
+                <img class="container__icon-next" src="/build/images/icon-next.svg" alt="next">
+            </div>
+        </div>
+
+    </main>
+    
+</body>
+</html>
