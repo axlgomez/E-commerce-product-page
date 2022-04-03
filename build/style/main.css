@@ -113,7 +113,8 @@ body {
   padding: 0 0.7rem;
 }
 .nav__menu {
-  z-index: 1;
+  z-index: 10;
+  cursor: pointer;
 }
 .nav__logo {
   z-index: -1;
@@ -133,10 +134,10 @@ body {
   padding: 0;
   width: 250px;
   height: 100vh;
-  background-color: #f1f1f1;
+  background-color: hsl(0deg, 0%, 100%);
   position: absolute;
   top: 0;
-  z-index: -1;
+  z-index: 1;
   transform: translateX(-300px);
 }
 .navbar.expand {
@@ -163,18 +164,16 @@ body {
   width: 100%;
   margin-top: 1rem;
   overflow: hidden;
+  margin: 0.7rem auto 0;
   position: relative;
 }
-.container__sliders {
-  display: flex;
-  width: 400%;
-  height: 400px;
-}
 .container__slider {
-  width: 100%;
+  animation: fadeIn;
+  animation-duration: 0.7s;
 }
 .container__image {
   display: block;
+  height: 400px;
   width: 100%;
   object-fit: cover;
 }
@@ -195,6 +194,90 @@ body {
 }
 .container__icon-previous, .container__icon-next {
   width: 10px;
+}
+
+.items {
+  padding: 1rem 7%;
+}
+.items__title-secondary {
+  color: hsl(26deg, 100%, 55%);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+.items__title-primary {
+  margin-top: 0.5rem;
+  color: hsl(220deg, 13%, 13%);
+  line-height: 1.2;
+  font-size: 1.7rem;
+}
+.items__text {
+  margin-top: 1rem;
+  font-size: 14px;
+  color: hsl(219deg, 9%, 45%);
+}
+.items__price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+.items__price-current {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.items__price-old {
+  margin-right: 0.7rem;
+}
+.items__price-125 {
+  font-size: 1.7rem;
+  color: hsl(0deg, 0%, 0%);
+}
+.items__price-50 {
+  color: hsl(26deg, 100%, 55%);
+  background: hsl(25deg, 100%, 94%);
+  padding: 0 0.5rem;
+  border-radius: 0.5rem;
+}
+.items__price-250 {
+  color: hsl(220deg, 14%, 75%);
+  font-size: 0.9rem;
+  text-decoration: line-through;
+}
+.items__amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem auto 0;
+  background: hsl(223deg, 64%, 98%);
+  padding: 0.9rem;
+  border-radius: 0.7rem;
+}
+.items__icon {
+  margin: 0 1rem;
+  cursor: pointer;
+}
+.items__button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto 3rem;
+  cursor: pointer;
+  background: hsl(26deg, 100%, 55%);
+  color: hsl(0deg, 0%, 100%);
+  font-size: 0.9rem;
+  border: none;
+  outline: none;
+  padding: 0.8rem;
+  border-radius: 0.7rem;
+  box-shadow: 0 20px 25px rgba(255, 125, 26, 0.2);
+}
+.items__icon-cart {
+  filter: brightness(0) invert(1);
+  width: 15px;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,113 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.items
+{
+    padding: 1rem 7%;
+
+    &__title-secondary
+    {
+        color: $orange;
+        text-transform: uppercase;
+        font-size: .8rem;
+        letter-spacing: 1px;
+
+    }
+
+    &__title-primary
+    {
+        margin-top: .5rem;
+        color: $very-dark-blue;
+        line-height: 1.2;
+        font-size: 1.7rem;
+    }
+
+    &__text
+    {
+        margin-top: 1rem;
+        font-size: $size-paragraph;
+        color: $dark-grayish-blue;
+    }
+
+    &__price
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+
+    &__price-current
+    {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__price-old
+    {
+        margin-right: .7rem;
+    }
+
+    &__price-125
+    {
+        font-size: 1.7rem;
+        color: $black;
+    }
+
+    &__price-50
+    {
+        color: $orange;
+        background: $pale-orange;
+        padding: 0 .5rem;
+        border-radius: .5rem;
+    }
+
+    &__price-250
+    {
+        color: $grayish-blue;
+        font-size: .9rem;
+        text-decoration: line-through;
+    }
+
+    &__amount
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem auto 0;
+        background: $light-grayish-blue;
+        padding: .9rem;
+        border-radius: .7rem;
+    }
+
+    &__icon
+    {
+        margin: 0 1rem;
+        cursor: pointer;
+    }
+
+    &__button
+    {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin: 1rem auto 3rem;
+        cursor: pointer;
+        background: $orange;
+        color: $white;
+        font-size: .9rem;
+        border: none; outline: none;
+        padding: .8rem;
+        border-radius: .7rem;
+        box-shadow: 0 20px 25px rgba($color: $orange, $alpha: .2);
+    }
+
+    &__icon-cart
+    {
+        filter:  brightness(0) invert(1);
+        width: 15px;
+    }
+}

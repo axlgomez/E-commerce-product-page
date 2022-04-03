@@ -6,23 +6,20 @@
     width: 100%;
     margin-top: 1rem;
     overflow: hidden;
+    margin: .7rem auto 0;
     position: relative;
-
-    &__sliders
-    {
-        display: flex;
-        width: 400%;
-        height: 400px;
-    }
 
     &__slider
     {
-        width: 100%;
+        // display: none;
+        animation: fadeIn;
+        animation-duration: .7s; 
     }
 
     &__image
     {
         display: block;
+        height: 400px;
         width: 100%;
         object-fit: cover;
     }

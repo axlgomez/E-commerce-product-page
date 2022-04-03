@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="build/style/main.css">
     <script src="/src/scripts/main.js" defer></script>
     <title>E-commerce product page</title>
@@ -64,10 +65,48 @@
             <div class="container__btn container__btn--right" id="btn-right">
                 <img class="container__icon-previous" src="/build/images/icon-previous.svg" alt="previous">
             </div>
-            <div class="container__btn container__btn--left" id="btn-right">
+            <div class="container__btn container__btn--left" id="btn-left">
                 <img class="container__icon-next" src="/build/images/icon-next.svg" alt="next">
             </div>
         </div>
+
+        <section class="items">
+            <strong class="items__title-secondary">Sneaker Company</strong>
+            <h1 class="items__title-primary">Fall Limited Edition Sneakers</h1>
+            <p class="items__text">
+                These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+            </p>
+
+            <div class="items__price">
+                <div class="items__price-current">
+                    <strong class="items__price-125">$125.00</strong>
+                    <strong class="items__price-50">50%</strong>
+                </div>
+                <div class="items__price-old">
+                    <strong class="items__price-250">$250.00</strong>
+                </div>
+            </div>
+
+            <div class="items__amount">
+
+                <div class="items__icon" id="minus">
+                    <img src="/build/images/icon-minus.svg" alt="icon-minus">
+                </div>
+                <div>
+                    <strong id="amount">0</strong>
+                </div>
+                <div class="items__icon" id="plus">
+                    <img src="/build/images/icon-plus.svg" alt="icon-plus">
+                </div>
+
+            </div>
+
+            <button class="items__button">
+                <img class="items__icon-cart" src="/build/images/icon-cart.svg" alt="icon-cart">
+                <strong>Add to cart</strong>
+            </button>
+
+        </section>
 
     </main>
     
