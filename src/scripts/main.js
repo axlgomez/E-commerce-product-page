@@ -59,3 +59,73 @@ function decrease () {
 plus.addEventListener("click", ()=>{ increase() });
 
 minus.addEventListener("click", ()=>{ decrease() });
+
+// modal cart
+
+const cart = document.querySelector("#cart");
+
+cart.addEventListener("click", ()=>{
+  document.querySelector("#modal").classList.toggle("block");
+});
+
+//Add items to the cart
+let amount = document.querySelector("#amount");
+const AddToCart = document.querySelector("#AddCart");
+
+let product = [
+  {
+    image: '/build/images/image-product-1.jpg',
+    name: 'Autumn Limited Edition...',
+    price: 125,
+    inCart: 0
+  }
+
+];
+
+AddToCart.addEventListener("click", ()=>{
+  if(amount.innerHTML >= 1){
+    cartNumber(product);
+  }
+});
+
+function onLoadCartNumber(){
+  let productNumber = localStorage.getItem('cartNumber');
+
+  if(productNumber){
+    document.querySelector(".nav__amount").textContent = productNumber;
+    document.querySelector(".nav__amount").classList.add("opacity");
+  }
+}
+
+function cartNumber(product){
+  let productNumber = localStorage.getItem('cartNumber');
+  productNumber = parseInt(amount.innerHTML);
+  // console.log(amount.innerHTML);
+
+  if(productNumber){
+    localStorage.setItem('cartNumber', amount.innerHTML);
+    document.querySelector(".nav__amount").textContent = amount.innerHTML;
+    document.querySelector(".nav__amount").classList.add("opacity");
+  } else {
+    localStorage.setItem('cartNumber', amount.innerHTML);
+    document.querySelector(".nav__amount").textContent = amount.innerHTML;
+    document.querySelector(".nav__amount").classList.add("opacity");
+  }
+
+  setItem(product);
+}
+
+function setItem(product){
+  let cartItems = localStorage.getItem("productInCart");
+  cartItems = JSON.parse(cartItems);
+
+    product.inCart = amount.innerHTML;
+      cartItems = {
+        product: product
+    }
+
+
+  localStorage.setItem("productInCart", JSON.stringify(cartItems));
+}
+
+onLoadCartNumber();

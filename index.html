@@ -29,7 +29,10 @@
             </nav>
         </div>
         <div class="nav__profile">
-            <img class="nav__cart" src="/build/images/icon-cart.svg" alt="cart">
+            <div class="nav__basket">
+                <img class="nav__cart" id="cart" src="/build/images/icon-cart.svg" alt="cart">
+                <span class="nav__amount">0</span>
+            </div>
             <img class="nav__avatar" src="/build/images/image-avatar.png" alt="avatar">
         </div>
     </header>
@@ -101,12 +104,22 @@
 
             </div>
 
-            <button class="items__button">
+            <button class="items__button" id="AddCart">
                 <img class="items__icon-cart" src="/build/images/icon-cart.svg" alt="icon-cart">
                 <strong>Add to cart</strong>
             </button>
 
         </section>
+
+        <aside class="modal" id="modal">
+            <h4 class="modal__title">Cart</h4>
+            <hr>
+            <div class="modal__carrito">
+                <ul id="carrito"></ul>
+                <p id="total"></p>
+            </div>
+            <p class="modal__text">Your cart is empty.</p>
+        </aside>
 
     </main>
     

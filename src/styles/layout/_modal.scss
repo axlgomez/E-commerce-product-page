@@ -1,0 +1,43 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.modal
+{
+    position: absolute;
+    top: 15%; right: 0; left: 0;
+    margin: auto;
+    width: 90%;
+    height: 50%;
+    background: $white;
+    border-radius: .5rem;
+    box-shadow: 0 5px 10px rgba($color: $black, $alpha: .2);
+    display: none;
+
+    &.block
+    {
+        display: block;
+        animation: fadeIn;
+        animation-duration: .7s;
+    }
+
+    &__title
+    {
+        padding: 1.2rem 1.5rem .7rem;
+    }
+
+    hr
+    {
+        height: 1px;
+        border: none;
+        background: rgba($color: $grayish-blue, $alpha: .5);
+    }
+
+    &__text
+    {
+        text-align: center;
+        transform: translateY(4.5rem);
+        font-family: inherit;
+        font-weight: map-get($weights, bold);
+        color: $dark-grayish-blue;
+    }
+}

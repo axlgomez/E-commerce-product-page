@@ -67,7 +67,35 @@ body
         display: flex;
         align-items: center;
         gap: 2rem;
-        z-index: -1;
+    }
+
+    &__basket
+    {
+        position: relative;
+    }
+
+    &__cart
+    {
+        cursor: pointer;
+    }
+
+    &__amount
+    {
+        position: absolute;
+        top: -.4rem; right: -.4rem;
+        font-size: .55rem;
+        color: $white;
+        background: $orange;
+        padding: 0 .4rem;
+        border-radius: 47%;
+        opacity: 0;
+
+        &.opacity
+        {
+            opacity: 1;
+            animation: fadeIn;
+            animation-duration: .7s;
+        }
     }
 
     &__avatar
