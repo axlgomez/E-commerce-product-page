@@ -2,10 +2,12 @@
 
 const menu = document.querySelector("#menu");
 const myNav = document.querySelector("#myNav");
+const navContainer = document.querySelector("#navContainer");
 
 menu.addEventListener("click", ()=>{
     menu.classList.toggle("fa-xmark");
     myNav.classList.toggle("expand");
+    navContainer.classList.toggle("expand");
 });
 
 // slider
@@ -74,7 +76,6 @@ const AddToCart = document.querySelector("#AddCart");
 
 let product = [
   {
-    image: '/build/images/image-product-1.jpg',
     name: 'Autumn Limited Edition...',
     price: 125,
     inCart: 0
@@ -85,6 +86,8 @@ let product = [
 AddToCart.addEventListener("click", ()=>{
   if(amount.innerHTML >= 1){
     cartNumber(product);
+    totalCost(product);
+    displayCart();
   }
 });
 
@@ -116,16 +119,64 @@ function cartNumber(product){
 }
 
 function setItem(product){
-  let cartItems = localStorage.getItem("productInCart");
-  cartItems = JSON.parse(cartItems);
 
-    product.inCart = amount.innerHTML;
-      cartItems = {
-        product: product
+  let cartItems = JSON.parse(localStorage.getItem('productInCart'));
+
+  product[0].inCart = amount.innerHTML;
+    cartItems = {
+      [product[0].name]: product
     }
-
 
   localStorage.setItem("productInCart", JSON.stringify(cartItems));
 }
 
+function totalCost(product){
+  let cartCost = localStorage.getItem('totalCost');
+
+  if (cartCost != null){
+    cartCost = parseInt(cartCost);
+    localStorage.setItem('totalCost', product[0].price  * product[0].inCart );
+    } else{
+      localStorage.setItem('totalCost', product[0].price * product[0].inCart );
+    }
+
+}
+
+function displayCart(){
+  let cartItems = JSON.parse(localStorage.getItem('productInCart'));
+  let modalContainer = document.querySelector(".modal__container");
+
+  if(cartItems && modalContainer){
+    Object.values(cartItems).map(item => {
+      modalContainer.innerHTML = `<div class="modal__carrito">
+    <div class="modal__img">
+    <img src="/build/images/image-product-1.jpg" alt="image-product">
+    </div>
+    <div class="modal__price">
+        <p class="modal__name">${item[0].name}</p>
+        <div class="modal__total">
+            <p class="modal__number">$${item[0].price}.00</p>
+            <p class="modal__number">x</p>
+            <p class="modal__number">${item[0].inCart}</p>
+            <strong>$${item[0].price * item[0].inCart}.00</strong>
+        </div>
+    </div>
+    <div class="modal__delete">
+        <img src="/build/images/icon-delete.svg" alt="icon-delete">
+    </div>
+  </div>
+  <button class="modal__button">
+    Checkout
+    </button>
+    `
+    document.querySelector("#cartEmpty").classList.remove("empty");
+    });
+  }else {
+    document.querySelector("#cartEmpty").classList.add("empty");
+  }
+
+}
+
 onLoadCartNumber();
+displayCart();
+

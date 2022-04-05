@@ -106,23 +106,36 @@ body
 
 .navbar
 {
-    margin: 0;
-    padding: 0;
-    width: 250px;
-    height: 100vh;
-    background-color: $white;
+    background: rgba($color: $black, $alpha: .7);
+    width: 0;
+    height: 146%;
     position: absolute;
-    top: 0;   
-    z-index: 1; 
-    transform: translateX(-300px);
+    top: 0; bottom: 0;
+    z-index: 1;
+    overflow: hidden;
 
     &.expand
     {
-        transform: translateX(0px);
+        width: 100%;
+        animation: fadeIn;
+        animation-duration: .7s;
     }
 
-    @include break-point(tablet){
-        display: none;
+    &__container
+    {
+        background: $white;
+        width: 225px;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        transform: translate(-300px);
+
+        &.expand
+        {
+            transform: translate(0);
+            animation: slideInLeft;
+            animation-duration: .7s;
+        }
     }
 
 

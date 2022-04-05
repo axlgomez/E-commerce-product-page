@@ -6,8 +6,8 @@
     position: absolute;
     top: 15%; right: 0; left: 0;
     margin: auto;
-    width: 90%;
-    height: 50%;
+    max-width: 22rem;
+    height: 42%;
     background: $white;
     border-radius: .5rem;
     box-shadow: 0 5px 10px rgba($color: $black, $alpha: .2);
@@ -35,9 +35,80 @@
     &__text
     {
         text-align: center;
-        transform: translateY(4.5rem);
+        transform: translateY(3.5rem);
         font-family: inherit;
         font-weight: map-get($weights, bold);
         color: $dark-grayish-blue;
+        display: none;
+
+        &.empty
+        {
+            display: block;
+        }
+    }
+
+    &__carrito
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 1.5rem auto 0;
+        text-align: center;
+        padding: 0 1rem;
+        // display: none;
+    }
+
+    &__img
+    {
+        img
+        {
+            width: 3.2rem;
+            border-radius: .3rem;
+        }
+    }
+
+    &__name
+    {
+        font-size: .9rem;
+        color: rgba($color: $very-dark-blue, $alpha: .5);
+        font-family: $font-primary;
+        font-weight: map-get($weights, bold);
+    }
+
+    &__number
+    {
+        color: rgba($color: $very-dark-blue, $alpha: .5);
+        font-family: $font-primary;
+        font-weight: map-get($weights, bold);
+    }
+
+    &__price
+    {
+        transform: translateX(-1rem);
+    }
+
+    &__total
+    {
+        display: flex;
+        gap: .5rem;
+        font-size: .9rem;
+    }
+
+    &__delete
+    {
+        cursor: pointer;
+    }
+
+    &__button
+    {
+        display: block;
+        margin: 1.5rem auto 0;
+        width: 85%;
+        font-size: .9rem;
+        padding: .9rem;
+        border: none; outline: none;
+        background: $orange;
+        color: $white;
+        border-radius: .5rem;
     }
 }

@@ -38,13 +38,15 @@
     </header>
 
     <nav class="navbar" id="myNav">
-        <ul class="navbar__items">
-        <li class="navbar_list"><a class="navbar__item" href="#">Collections</a></li>
-        <li class="navbar_list"><a class="navbar__item" href="#">Men</a></li>
-        <li class="navbar_list"><a class="navbar__item" href="#">Women</a></li>
-        <li class="navbar_list"><a class="navbar__item" href="#">About</a></li>
-        <li class="navbar_list"><a class="navbar__item" href="#">Contact</a></li>
-        </ul>
+        <div class="navbar__container" id="navContainer">
+            <ul class="navbar__items">
+                <li class="navbar_list"><a class="navbar__item" href="#">Collections</a></li>
+                <li class="navbar_list"><a class="navbar__item" href="#">Men</a></li>
+                <li class="navbar_list"><a class="navbar__item" href="#">Women</a></li>
+                <li class="navbar_list"><a class="navbar__item" href="#">About</a></li>
+                <li class="navbar_list"><a class="navbar__item" href="#">Contact</a></li>
+                </ul>
+        </div>
     </nav>
 
     <main>
@@ -114,11 +116,8 @@
         <aside class="modal" id="modal">
             <h4 class="modal__title">Cart</h4>
             <hr>
-            <div class="modal__carrito">
-                <ul id="carrito"></ul>
-                <p id="total"></p>
-            </div>
-            <p class="modal__text">Your cart is empty.</p>
+            <div class="modal__container"></div>
+            <p class="modal__text" id="cartEmpty">Your cart is empty.</p>
         </aside>
 
     </main>
