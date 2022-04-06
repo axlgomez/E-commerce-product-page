@@ -114,6 +114,11 @@ body
     z-index: 1;
     overflow: hidden;
 
+    @include break-point(tablet)
+    {
+        display: none;
+    }
+
     &.expand
     {
         width: 100%;
@@ -129,6 +134,11 @@ body
         overflow: hidden;
         position: absolute;
         transform: translate(-300px);
+
+        @include break-point(tablet)
+        {
+            display: none;
+        }
 
         &.expand
         {

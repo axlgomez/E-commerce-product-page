@@ -15,6 +15,8 @@ menu.addEventListener("click", ()=>{
 const btnRight = document.querySelector("#btn-right");
 const btnLeft = document.querySelector("#btn-left");
 let slides = document.getElementsByClassName("container__slider");
+let currentDots = document.getElementsByClassName("container__column");
+let dots = document.getElementsByClassName("container__demo");
 
 
 let slideIndex = 1;
@@ -24,6 +26,8 @@ showSlides(slideIndex);
 // Next/previous controls
 function plusSlides(n) { showSlides(slideIndex += n);}
 
+function currentSlide(n) { showSlides(slideIndex = n);}
+
 function showSlides(n) {
   let i;
   if (n > slides.length) {slideIndex = 1}
@@ -31,8 +35,16 @@ function showSlides(n) {
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace("active", "");
+  }
+  for (i = 0; i < currentDots.length; i++) {
+    currentDots[i].className = currentDots[i].className.replace("activo", "");
+  }
 
   slides[slideIndex-1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+  currentDots[slideIndex - 1].className += " activo";
 }
 
 setInterval(() => { plusSlides(1)}, 4000);
@@ -162,7 +174,7 @@ function displayCart(){
         </div>
     </div>
     <div class="modal__delete">
-        <img src="/build/images/icon-delete.svg" alt="icon-delete">
+        <img id="delete" src="/build/images/icon-delete.svg" alt="icon-delete">
     </div>
   </div>
   <button class="modal__button">
@@ -170,6 +182,13 @@ function displayCart(){
     </button>
     `
     document.querySelector("#cartEmpty").classList.remove("empty");
+
+      document.querySelector("#delete").addEventListener("click", ()=>{
+        localStorage.clear();
+        modalContainer.innerHTML = '';
+        document.querySelector(".nav__amount").textContent = '';
+        document.querySelector("#cartEmpty").classList.add("empty");
+      });
     });
   }else {
     document.querySelector("#cartEmpty").classList.add("empty");

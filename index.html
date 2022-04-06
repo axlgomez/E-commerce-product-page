@@ -51,67 +51,90 @@
 
     <main>
 
-        <div class="container">
-            <div class="container__sliders" id="slider">
-                <div class="container__slider">
-                    <img class="container__image" src="/build/images/image-product-1.jpg" alt="product-1">
+        <div class="desk">
+            <div class="container">
+                <div class="container__sliders" id="slider">
+                    <div class="container__slider">
+                        <img class="container__image" src="/build/images/image-product-1.jpg" alt="product-1">
+                    </div>
+                    <div class="container__slider">
+                        <img class="container__image" src="/build/images/image-product-2.jpg" alt="product-2">
+                    </div>
+                    <div class="container__slider">
+                        <img class="container__image" src="/build/images/image-product-3.jpg" alt="product-1">
+                    </div>
+                    <div class="container__slider">
+                        <img class="container__image" src="/build/images/image-product-4.jpg" alt="product-4">
+                    </div>
                 </div>
-                <div class="container__slider">
-                    <img class="container__image" src="/build/images/image-product-2.jpg" alt="product-2">
+                
+                <div class="container__btn container__btn--right" id="btn-right">
+                    <img class="container__icon-previous" src="/build/images/icon-previous.svg" alt="previous">
                 </div>
-                <div class="container__slider">
-                    <img class="container__image" src="/build/images/image-product-3.jpg" alt="product-1">
+                <div class="container__btn container__btn--left" id="btn-left">
+                    <img class="container__icon-next" src="/build/images/icon-next.svg" alt="next">
                 </div>
-                <div class="container__slider">
-                    <img class="container__image" src="/build/images/image-product-4.jpg" alt="product-4">
+    
+                    <!-- Thumbnail image controls -->
+                <div class="container__row">
+                    <div class="container__column">
+                        <img class="container__demo" src="/build/images/image-product-1-thumbnail.jpg" onclick="currentSlide(1)" alt="product-1-thumbnail">
+                    </div>
+                
+                    <div class="container__column">
+                        <img class="container__demo" src="/build/images/image-product-2-thumbnail.jpg" onclick="currentSlide(2)" alt="product-2-thumbnail">
+                    </div>
+                
+                    <div class="container__column">
+                        <img class="container__demo" src="/build/images/image-product-3-thumbnail.jpg" onclick="currentSlide(3)" alt="product-3-thumbnail">
+                    </div>
+                
+                    <div class="container__column">
+                        <img class="container__demo" src="/build/images/image-product-4-thumbnail.jpg" onclick="currentSlide(4)" alt="product-4-thumbnail">
+                    </div>
                 </div>
             </div>
-            
-            <div class="container__btn container__btn--right" id="btn-right">
-                <img class="container__icon-previous" src="/build/images/icon-previous.svg" alt="previous">
-            </div>
-            <div class="container__btn container__btn--left" id="btn-left">
-                <img class="container__icon-next" src="/build/images/icon-next.svg" alt="next">
-            </div>
+    
+            <section class="items">
+                <strong class="items__title-secondary">Sneaker Company</strong>
+                <h1 class="items__title-primary">Fall Limited Edition Sneakers</h1>
+                <p class="items__text">
+                    These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+                </p>
+    
+                <div class="items__price">
+                    <div class="items__price-current">
+                        <strong class="items__price-125">$125.00</strong>
+                        <strong class="items__price-50">50%</strong>
+                    </div>
+                    <div class="items__price-old">
+                        <strong class="items__price-250">$250.00</strong>
+                    </div>
+                </div>
+    
+               <div class="items__amount-button">
+                    <div class="items__amount">
+    
+                        <div class="items__icon" id="minus">
+                            <img src="/build/images/icon-minus.svg" alt="icon-minus">
+                        </div>
+                        <div>
+                            <strong id="amount">0</strong>
+                        </div>
+                        <div class="items__icon" id="plus">
+                            <img src="/build/images/icon-plus.svg" alt="icon-plus">
+                        </div>
+    
+                    </div>
+    
+                    <button class="items__button" id="AddCart">
+                        <img class="items__icon-cart" src="/build/images/icon-cart.svg" alt="icon-cart">
+                        <strong>Add to cart</strong>
+                    </button>
+               </div>
+    
+            </section>
         </div>
-
-        <section class="items">
-            <strong class="items__title-secondary">Sneaker Company</strong>
-            <h1 class="items__title-primary">Fall Limited Edition Sneakers</h1>
-            <p class="items__text">
-                These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
-            </p>
-
-            <div class="items__price">
-                <div class="items__price-current">
-                    <strong class="items__price-125">$125.00</strong>
-                    <strong class="items__price-50">50%</strong>
-                </div>
-                <div class="items__price-old">
-                    <strong class="items__price-250">$250.00</strong>
-                </div>
-            </div>
-
-            <div class="items__amount">
-
-                <div class="items__icon" id="minus">
-                    <img src="/build/images/icon-minus.svg" alt="icon-minus">
-                </div>
-                <div>
-                    <strong id="amount">0</strong>
-                </div>
-                <div class="items__icon" id="plus">
-                    <img src="/build/images/icon-plus.svg" alt="icon-plus">
-                </div>
-
-            </div>
-
-            <button class="items__button" id="AddCart">
-                <img class="items__icon-cart" src="/build/images/icon-cart.svg" alt="icon-cart">
-                <strong>Add to cart</strong>
-            </button>
-
-        </section>
 
         <aside class="modal" id="modal">
             <h4 class="modal__title">Cart</h4>

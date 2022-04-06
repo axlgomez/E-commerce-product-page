@@ -1,17 +1,33 @@
 @use "../abstract/" as *;
 @use "../base/" as *;
 
+.desk
+{
+    @include break-point(portatil)
+    {
+        margin: 2rem auto 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .container
 {
     width: 100%;
-    margin-top: 1rem;
     overflow: hidden;
-    margin: .7rem auto 0;
+    margin: 1rem auto 0;
     position: relative;
+
+    @include break-point(tablet)
+    {
+        display: flex;
+        flex-direction: column;
+    }
 
     &__slider
     {
-        // display: none;
         animation: fadeIn;
         animation-duration: .7s; 
     }
@@ -22,6 +38,19 @@
         height: 290px;
         width: 100%;
         object-fit: cover;
+
+        @include break-point (movil-L)
+        {
+            margin: auto;
+            width: 85%;
+            height: 400px;
+            border-radius: 1rem;
+        }
+
+        @include break-point(tablet)
+        {
+            width: 24rem;
+        }
     }
 
     &__btn
@@ -34,14 +63,29 @@
         padding: .5rem .7rem;
         cursor: pointer;
 
+        @include break-point(tablet)
+        {
+            display: none;
+        }
+
         &--left
         {
             right: 1rem;
+
+            @include break-point (movil-L)
+            {
+                right: 4rem;
+            }
         }
 
         &--right
         {
             left: 1rem;
+
+            @include break-point (movil-L)
+            {
+                left: 4rem;
+            }
         }
     }
 
@@ -49,5 +93,46 @@
     &__icon-next
     {
         width: 10px;
+    }
+
+    &__row
+    {
+        display: none;
+
+        @include break-point(tablet)
+        {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem auto 1rem;
+        }
+    }
+
+    &__column
+    {
+        width: 100%;
+
+        &.activo
+        {
+            outline: 2.5px solid $orange;
+            border-radius: .7rem;
+        }
+    }
+
+    &__demo
+    {
+        width: 5rem;
+        border-radius: .5rem;
+        cursor: pointer;
+
+        &:hover
+        {
+            opacity: .5;
+        }
+
+        &.active
+        {
+            opacity: .5;
+        }
     }
 }

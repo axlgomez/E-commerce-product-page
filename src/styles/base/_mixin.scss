@@ -1,6 +1,14 @@
 @mixin break-point($breakpoint) {
 
+    @if $breakpoint == movil-L {
+        @media screen and (min-width: 550px) { @content }
+    }
+
     @if $breakpoint == tablet {
         @media screen and (min-width: 768px) { @content }
+    }
+
+    @if $breakpoint == portatil {
+        @media screen and (min-width: 1048px) { @content }
     }
 }

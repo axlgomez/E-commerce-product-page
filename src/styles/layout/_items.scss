@@ -5,6 +5,11 @@
 {
     padding: 1rem 7%;
 
+    @include break-point(portatil)
+    {
+        padding: 0;
+    }
+
     &__title-secondary
     {
         color: $orange;
@@ -20,6 +25,12 @@
         color: $very-dark-blue;
         line-height: 1.2;
         font-size: 1.7rem;
+
+        @include break-point(portatil)
+        {
+            font-size: 2.3rem;
+            width: 55%;
+        }
     }
 
     &__text
@@ -27,6 +38,13 @@
         margin-top: 1rem;
         font-size: $size-paragraph;
         color: $dark-grayish-blue;
+
+        @include break-point(portatil)
+        {
+            width: 55%;
+            line-height: 1.7;
+            margin-top: 1.5rem;
+        }
     }
 
     &__price
@@ -35,6 +53,12 @@
         align-items: center;
         justify-content: space-between;
         margin-top: 1rem;
+
+        @include break-point(movil-L)
+        {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__price-current
@@ -69,6 +93,23 @@
         font-size: .9rem;
         text-decoration: line-through;
     }
+    &__amount-button
+    {
+        @include break-point(movil-L)
+        {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @include break-point(portatil)
+        {
+            width: 55%;
+            margin-top: 1rem;
+            gap: 1rem;
+        }
+    }
 
     &__amount
     {
@@ -77,14 +118,29 @@
         justify-content: space-between;
         margin: 1rem auto 0;
         background: $light-grayish-blue;
-        padding: .9rem;
+        padding: .7rem;
         border-radius: .7rem;
+
+        @include break-point(movil-L)
+        {
+            width: 50%;
+        }
+
+        @include break-point(portatil)
+        {
+            width: 70%;
+        }
     }
 
     &__icon
     {
         margin: 0 1rem;
         cursor: pointer;
+
+        @include break-point(movil-L)
+        {
+            margin: .5rem;
+        }
     }
 
     &__button
@@ -103,6 +159,16 @@
         padding: .8rem;
         border-radius: .7rem;
         box-shadow: 0 20px 25px rgba($color: $orange, $alpha: .2);
+
+        @include break-point(movil-L)
+        {
+            margin: 1rem auto 0;
+        }
+
+        @include break-point(portatil)
+        {
+            // width: 50%;
+        }
     }
 
     &__icon-cart

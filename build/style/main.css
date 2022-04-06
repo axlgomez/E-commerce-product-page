@@ -160,6 +160,11 @@ body {
   z-index: 1;
   overflow: hidden;
 }
+@media screen and (min-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
 .navbar.expand {
   width: 100%;
   animation: fadeIn;
@@ -172,6 +177,11 @@ body {
   overflow: hidden;
   position: absolute;
   transform: translate(-300px);
+}
+@media screen and (min-width: 768px) {
+  .navbar__container {
+    display: none;
+  }
 }
 .navbar__container.expand {
   transform: translate(0);
@@ -190,12 +200,27 @@ body {
   padding: 0.6rem 0;
 }
 
+@media screen and (min-width: 1048px) {
+  .desk {
+    margin: 2rem auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .container {
   width: 100%;
-  margin-top: 1rem;
   overflow: hidden;
-  margin: 0.7rem auto 0;
+  margin: 1rem auto 0;
   position: relative;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .container__slider {
   animation: fadeIn;
@@ -207,6 +232,19 @@ body {
   width: 100%;
   object-fit: cover;
 }
+@media screen and (min-width: 550px) {
+  .container__image {
+    margin: auto;
+    width: 85%;
+    height: 400px;
+    border-radius: 1rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .container__image {
+    width: 24rem;
+  }
+}
 .container__btn {
   position: absolute;
   top: 50%;
@@ -216,18 +254,67 @@ body {
   padding: 0.5rem 0.7rem;
   cursor: pointer;
 }
+@media screen and (min-width: 768px) {
+  .container__btn {
+    display: none;
+  }
+}
 .container__btn--left {
   right: 1rem;
+}
+@media screen and (min-width: 550px) {
+  .container__btn--left {
+    right: 4rem;
+  }
 }
 .container__btn--right {
   left: 1rem;
 }
+@media screen and (min-width: 550px) {
+  .container__btn--right {
+    left: 4rem;
+  }
+}
 .container__icon-previous, .container__icon-next {
   width: 10px;
+}
+.container__row {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .container__row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem auto 1rem;
+  }
+}
+.container__column {
+  width: 100%;
+}
+.container__column.activo {
+  outline: 2.5px solid hsl(26deg, 100%, 55%);
+  border-radius: 0.7rem;
+}
+.container__demo {
+  width: 5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.container__demo:hover {
+  opacity: 0.5;
+}
+.container__demo.active {
+  opacity: 0.5;
 }
 
 .items {
   padding: 1rem 7%;
+}
+@media screen and (min-width: 1048px) {
+  .items {
+    padding: 0;
+  }
 }
 .items__title-secondary {
   color: hsl(26deg, 100%, 55%);
@@ -241,16 +328,35 @@ body {
   line-height: 1.2;
   font-size: 1.7rem;
 }
+@media screen and (min-width: 1048px) {
+  .items__title-primary {
+    font-size: 2.3rem;
+    width: 55%;
+  }
+}
 .items__text {
   margin-top: 1rem;
   font-size: 14px;
   color: hsl(219deg, 9%, 45%);
+}
+@media screen and (min-width: 1048px) {
+  .items__text {
+    width: 55%;
+    line-height: 1.7;
+    margin-top: 1.5rem;
+  }
 }
 .items__price {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 1rem;
+}
+@media screen and (min-width: 550px) {
+  .items__price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .items__price-current {
   display: flex;
@@ -275,18 +381,48 @@ body {
   font-size: 0.9rem;
   text-decoration: line-through;
 }
+@media screen and (min-width: 550px) {
+  .items__amount-button {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 1048px) {
+  .items__amount-button {
+    width: 55%;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+}
 .items__amount {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 1rem auto 0;
   background: hsl(223deg, 64%, 98%);
-  padding: 0.9rem;
+  padding: 0.7rem;
   border-radius: 0.7rem;
+}
+@media screen and (min-width: 550px) {
+  .items__amount {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 1048px) {
+  .items__amount {
+    width: 70%;
+  }
 }
 .items__icon {
   margin: 0 1rem;
   cursor: pointer;
+}
+@media screen and (min-width: 550px) {
+  .items__icon {
+    margin: 0.5rem;
+  }
 }
 .items__button {
   width: 100%;
@@ -304,6 +440,11 @@ body {
   padding: 0.8rem;
   border-radius: 0.7rem;
   box-shadow: 0 20px 25px rgba(255, 125, 26, 0.2);
+}
+@media screen and (min-width: 550px) {
+  .items__button {
+    margin: 1rem auto 0;
+  }
 }
 .items__icon-cart {
   filter: brightness(0) invert(1);
