@@ -1,0 +1,132 @@
+@use "../abstract/" as *;
+@use "../base/" as *;
+
+.lightbox
+{
+    display: none;
+
+
+    @include break-point(tablet)
+    {
+        // display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: rgba($color: $very-dark-blue, $alpha: .8);
+    }
+
+    @include break-point(portatil)
+    {
+        margin-top: 0;
+    }
+
+    &__slider
+    {
+        animation: fadeIn;
+        animation-duration: .7s;
+    }
+
+    &__image
+    {
+        display: none;
+
+        @include break-point(tablet)
+        {
+            position: relative;
+            display: block;
+            height: 290px;
+            width: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            width: 26rem;
+            height: 400px;
+            margin: auto;
+            border-radius: 1rem;
+        }
+    }
+
+    &__btn
+    {
+        display: none;
+
+        @include break-point(portatil)
+        {
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: $white;
+            border-radius: 50%;
+            padding: .7rem .8rem;
+            cursor: pointer;
+        }
+
+        &--left
+        {
+            right: 50%;
+            transform: translate(14rem, -3rem);
+        }
+
+        &--right
+        {
+            left: 50%;
+            transform: translate(-14rem, -3rem);
+        }
+    }
+
+    &__icon-previous,
+    &__icon-next
+    {
+        width: 10px;
+    }
+
+    &__row
+    {
+        display: none;
+
+        @include break-point(tablet)
+        {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem auto 1rem;
+        }
+    }
+
+    &__column
+    {
+        width: 100%;
+        background: $white;
+        border-radius: .6rem;
+
+        &.activo
+        {
+            outline: 3px solid $orange;
+            border-radius: .7rem;
+        }
+    }
+
+    &__demo
+    {
+        width: 5.2rem;
+        border-radius: .5rem;
+        cursor: pointer;
+
+        &:hover
+        {
+            opacity: .5;
+        }
+
+        &.active
+        {
+            opacity: .5;
+        }
+    }
+}

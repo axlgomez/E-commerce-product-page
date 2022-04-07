@@ -21,11 +21,11 @@
         <div class="nav__nav2">
             <img class="nav__logo" src="/build/images/logo.svg" alt="logo">
             <nav class="nav__navbar">
-                <li class="nav__list"><a class="nav__item" href="#">Collections</a></li>
-                <li class="nav__list"><a class="nav__item" href="#">Men</a></li>
-                <li class="nav__list"><a class="nav__item" href="#">Women</a></li>
-                <li class="nav__list"><a class="nav__item" href="#">About</a></li>
-                <li class="nav__list"><a class="nav__item" href="#">Contact</a></li>
+                <li class="nav__list"><a class="nav__item" href="#Collections">Collections</a></li>
+                <li class="nav__list"><a class="nav__item" href="#Men">Men</a></li>
+                <li class="nav__list"><a class="nav__item" href="#Women">Women</a></li>
+                <li class="nav__list"><a class="nav__item" href="#About">About</a></li>
+                <li class="nav__list"><a class="nav__item" href="#Contact">Contact</a></li>
             </nav>
         </div>
         <div class="nav__profile">
@@ -40,14 +40,16 @@
     <nav class="navbar" id="myNav">
         <div class="navbar__container" id="navContainer">
             <ul class="navbar__items">
-                <li class="navbar_list"><a class="navbar__item" href="#">Collections</a></li>
-                <li class="navbar_list"><a class="navbar__item" href="#">Men</a></li>
-                <li class="navbar_list"><a class="navbar__item" href="#">Women</a></li>
-                <li class="navbar_list"><a class="navbar__item" href="#">About</a></li>
-                <li class="navbar_list"><a class="navbar__item" href="#">Contact</a></li>
-                </ul>
+                <li class="navbar_list"><a class="navbar__item" href="#Collections">Collections</a></li>
+                <li class="navbar_list"><a class="navbar__item" href="#Men">Men</a></li>
+                <li class="navbar_list"><a class="navbar__item" href="#Women">Women</a></li>
+                <li class="navbar_list"><a class="navbar__item" href="#About">About</a></li>
+                <li class="navbar_list"><a class="navbar__item" href="#Contact">Contact</a></li>
+            </ul>
         </div>
     </nav>
+
+    <hr>
 
     <main>
 
@@ -55,16 +57,16 @@
             <div class="container">
                 <div class="container__sliders" id="slider">
                     <div class="container__slider">
-                        <img class="container__image" src="/build/images/image-product-1.jpg" alt="product-1">
+                        <img class="container__image" src="/build/images/image-product-1.jpg" onclick="openModal();currentSlide(1)" alt="product-1">
                     </div>
                     <div class="container__slider">
-                        <img class="container__image" src="/build/images/image-product-2.jpg" alt="product-2">
+                        <img class="container__image" src="/build/images/image-product-2.jpg" onclick="openModal();currentSlide(2)" alt="product-2">
                     </div>
                     <div class="container__slider">
-                        <img class="container__image" src="/build/images/image-product-3.jpg" alt="product-1">
+                        <img class="container__image" src="/build/images/image-product-3.jpg" onclick="openModal();currentSlide(3)" alt="product-1">
                     </div>
                     <div class="container__slider">
-                        <img class="container__image" src="/build/images/image-product-4.jpg" alt="product-4">
+                        <img class="container__image" src="/build/images/image-product-4.jpg" onclick="openModal();currentSlide(4)" alt="product-4">
                     </div>
                 </div>
                 
@@ -136,9 +138,54 @@
             </section>
         </div>
 
+        <!-- The Modal/Lightbox -->
+
+        <div class="lightbox" id="myModal">
+            <div class="lightbox__sliders" id="slider">
+                <div class="lightbox__slider">
+                    <img class="lightbox__image" src="/build/images/image-product-1.jpg" alt="product-1">
+                </div>
+                <div class="lightbox__slider">
+                    <img class="lightbox__image" src="/build/images/image-product-2.jpg" alt="product-2">
+                </div>
+                <div class="lightbox__slider">
+                    <img class="lightbox__image" src="/build/images/image-product-3.jpg" alt="product-1">
+                </div>
+                <div class="lightbox__slider">
+                    <img class="lightbox__image" src="/build/images/image-product-4.jpg" alt="product-4">
+                </div>
+            </div>
+            
+            <div class="lightbox__btn lightbox__btn--right" id="right-btn">
+                <img class="lightbox__icon-previous" src="/build/images/icon-previous.svg" alt="previous">
+            </div>
+            <div class="lightbox__btn lightbox__btn--left" id="left-btn">
+                <img class="lightbox__icon-next" src="/build/images/icon-next.svg" alt="next">
+            </div>
+
+                <!-- Thumbnail image controls -->
+            <div class="lightbox__row">
+                <div class="lightbox__column ">
+                    <img class="lightbox__demo" src="/build/images/image-product-1-thumbnail.jpg" onclick="currentSlide(1)" alt="product-1-thumbnail">
+                </div>
+            
+                <div class="lightbox__column ">
+                    <img class="lightbox__demo " src="/build/images/image-product-2-thumbnail.jpg" onclick="currentSlide(2)"alt="product-2-thumbnail">
+                </div>
+            
+                <div class="lightbox__column ">
+                    <img class="lightbox__demo " src="/build/images/image-product-3-thumbnail.jpg" onclick="currentSlide(3)" alt="product-3-thumbnail">
+                </div>
+            
+                <div class="lightbox__column ">
+                    <img class="lightbox__demo " src="/build/images/image-product-4-thumbnail.jpg" onclick="currentSlide(4)" alt="product-4-thumbnail">
+                </div>
+            </div>
+        </div>
+
         <aside class="modal" id="modal">
             <h4 class="modal__title">Cart</h4>
-            <hr>
+            <hr class="modal__linea">
             <div class="modal__container"></div>
             <p class="modal__text" id="cartEmpty">Your cart is empty.</p>
         </aside>

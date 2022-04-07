@@ -6,10 +6,10 @@
     @include break-point(portatil)
     {
         margin: 2rem auto 0;
-        display: grid;
-        grid-template-columns: 1fr 1fr ;
+        display: flex;
         justify-content: center;
         align-items: center;
+        width: 90%;
     }
 }
 
@@ -24,6 +24,12 @@
     {
         display: flex;
         flex-direction: column;
+        margin-top: 2rem;
+    }
+
+    @include break-point(portatil)
+    {
+        margin-top: 0;
     }
 
     &__slider
@@ -38,6 +44,7 @@
         height: 290px;
         width: 100%;
         object-fit: cover;
+        cursor: pointer;
 
         @include break-point (movil-L)
         {
@@ -49,7 +56,8 @@
 
         @include break-point(tablet)
         {
-            width: 24rem;
+            width: 26rem;
+            height: 380px;
         }
     }
 
@@ -103,7 +111,7 @@
         {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             margin: 1.5rem auto 1rem;
         }
     }
@@ -121,7 +129,7 @@
 
     &__demo
     {
-        width: 5rem;
+        width: 5.2rem;
         border-radius: .5rem;
         cursor: pointer;
 

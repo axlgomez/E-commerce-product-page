@@ -33,7 +33,7 @@ body
         {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 2rem;
         }
     }
 
@@ -49,6 +49,16 @@ body
         text-decoration: none;
         font-weight: map-get($weights, regular);
         padding: 0 .7rem;
+        transition: all .3s;
+
+        &:hover
+        {
+            color: $very-dark-blue;
+            text-decoration: underline;
+            text-underline-offset: 2rem;
+            text-decoration-color: $orange;
+            text-decoration-thickness: 3px;
+        }
     }
 
     &__menu 
@@ -101,6 +111,18 @@ body
     &__avatar
     {
         width: 30px;
+        cursor: pointer;
+
+        &:hover
+        {
+            outline: 2px solid $orange;
+            border-radius: 50%;
+        }
+
+        @include break-point(tablet)
+        {
+            width: 37px;
+        }
     }
 }
 
@@ -162,5 +184,30 @@ body
         text-decoration: none;
         font-weight: map-get($weights, bold);
         padding: .6rem 0;
+
+        &:hover
+        {
+            color: $dark-grayish-blue;
+            text-decoration: underline;
+            text-underline-offset: .5rem;
+            text-decoration-color: $orange;
+            text-decoration-thickness: 3px;
+            transition: all .3s;
+        }
+    }
+}
+
+hr
+{
+    display: none;
+
+    @include break-point(tablet)
+    {
+        display: block;
+        height: 2px;
+        border: none;
+        border-radius: 1rem;
+        background: rgba($color: $grayish-blue, $alpha: .2);
+        width: 86%;
     }
 }

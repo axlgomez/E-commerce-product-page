@@ -13,10 +13,20 @@ menu.addEventListener("click", ()=>{
 // slider
 
 const btnRight = document.querySelector("#btn-right");
+const rightBtn = document.querySelector("#right-btn");
 const btnLeft = document.querySelector("#btn-left");
+const leftBtn = document.querySelector("#left-btn");
 let slides = document.getElementsByClassName("container__slider");
+let lightboxSlider = document.getElementsByClassName("lightbox__slider");
 let currentDots = document.getElementsByClassName("container__column");
+let lightboxCurrentDots = document.getElementsByClassName("lightbox__column");
 let dots = document.getElementsByClassName("container__demo");
+let lightboxDots = document.getElementsByClassName("lightbox__demo");
+
+// Open the Modal
+function openModal() {
+  document.getElementById("myModal").style.display = "flex";
+}
 
 
 let slideIndex = 1;
@@ -31,27 +41,43 @@ function currentSlide(n) { showSlides(slideIndex = n);}
 function showSlides(n) {
   let i;
   if (n > slides.length) {slideIndex = 1}
+  if (n > lightboxSlider.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
+  if (n < 1) {slideIndex = lightboxSlider.length}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
+  }
+  for (i = 0; i < lightboxSlider.length; i++) {
+    lightboxSlider[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace("active", "");
   }
+  for (i = 0; i < lightboxDots.length; i++) {
+    lightboxDots[i].className = lightboxDots[i].className.replace("active", "");
+  }
   for (i = 0; i < currentDots.length; i++) {
     currentDots[i].className = currentDots[i].className.replace("activo", "");
   }
+  for (i = 0; i < lightboxCurrentDots.length; i++) {
+    lightboxCurrentDots[i].className = lightboxCurrentDots[i].className.replace("activo", "");
+  }
 
   slides[slideIndex-1].style.display = "block";
+  lightboxSlider[slideIndex-1].style.display = "block";
   dots[slideIndex - 1].className += " active";
+  lightboxDots[slideIndex - 1].className += " active";
   currentDots[slideIndex - 1].className += " activo";
+  lightboxCurrentDots[slideIndex - 1].className += " activo";
 }
 
 setInterval(() => { plusSlides(1)}, 4000);
 
 btnRight.addEventListener("click", ()=>{ plusSlides(-1) });
+rightBtn.addEventListener("click", ()=>{ plusSlides(-1) });
 
 btnLeft.addEventListener("click", ()=>{ plusSlides(1) });
+leftBtn.addEventListener("click", ()=>{ plusSlides(1) });
 
 // increase / decrease amount
 
@@ -78,7 +104,7 @@ minus.addEventListener("click", ()=>{ decrease() });
 
 const cart = document.querySelector("#cart");
 
-cart.addEventListener("click", ()=>{
+cart.addEventListener("mouseover", ()=>{
   document.querySelector("#modal").classList.toggle("block");
 });
 
@@ -100,6 +126,10 @@ AddToCart.addEventListener("click", ()=>{
     cartNumber(product);
     totalCost(product);
     displayCart();
+    document.querySelector("#modal").classList.add("block");
+    setTimeout(() => {
+      document.querySelector("#modal").classList.remove("block");
+    }, 3000);
   }
 });
 
@@ -188,6 +218,9 @@ function displayCart(){
         modalContainer.innerHTML = '';
         document.querySelector(".nav__amount").textContent = '';
         document.querySelector("#cartEmpty").classList.add("empty");
+        setTimeout(() => {
+          document.querySelector("#modal").classList.remove("block");
+        }, 2000);
       });
     });
   }else {

@@ -28,8 +28,8 @@
 
         @include break-point(portatil)
         {
-            font-size: 2.3rem;
-            width: 55%;
+            font-size: 2.5rem;
+            width: 65%;
         }
     }
 
@@ -41,7 +41,7 @@
 
         @include break-point(portatil)
         {
-            width: 55%;
+            width: 70%;
             line-height: 1.7;
             margin-top: 1.5rem;
         }
@@ -103,10 +103,16 @@
             margin-bottom: 2rem;
         }
 
-        @include break-point(portatil)
+        @include break-point(tablet)
         {
             width: 55%;
-            margin-top: 1rem;
+            margin: 0 auto 2rem;
+        }
+
+        @include break-point(portatil)
+        {
+            width: 70%;
+            margin: 1rem 0;
             gap: 1rem;
         }
     }
@@ -128,7 +134,7 @@
 
         @include break-point(portatil)
         {
-            width: 70%;
+            width: 65%;
         }
     }
 
@@ -136,6 +142,11 @@
     {
         margin: 0 1rem;
         cursor: pointer;
+
+        &:hover
+        {
+            opacity: .7;
+        }
 
         @include break-point(movil-L)
         {
@@ -159,6 +170,11 @@
         padding: .8rem;
         border-radius: .7rem;
         box-shadow: 0 20px 25px rgba($color: $orange, $alpha: .2);
+
+        &:hover
+        {
+            opacity: .7;
+        }
 
         @include break-point(movil-L)
         {

@@ -87,7 +87,7 @@ body {
   align-items: center;
   gap: 1rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .nav__nav1 {
     display: none;
   }
@@ -95,11 +95,11 @@ body {
 .nav__nav2 {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .nav__nav2 {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 }
 .nav__list {
@@ -111,6 +111,14 @@ body {
   text-decoration: none;
   font-weight: 400;
   padding: 0 0.7rem;
+  transition: all 0.3s;
+}
+.nav__item:hover {
+  color: hsl(220deg, 13%, 13%);
+  text-decoration: underline;
+  text-underline-offset: 2rem;
+  text-decoration-color: hsl(26deg, 100%, 55%);
+  text-decoration-thickness: 3px;
 }
 .nav__menu {
   z-index: 10;
@@ -148,6 +156,16 @@ body {
 }
 .nav__avatar {
   width: 30px;
+  cursor: pointer;
+}
+.nav__avatar:hover {
+  outline: 2px solid hsl(26deg, 100%, 55%);
+  border-radius: 50%;
+}
+@media screen and (min-width: 800px) {
+  .nav__avatar {
+    width: 37px;
+  }
 }
 
 .navbar {
@@ -160,7 +178,7 @@ body {
   z-index: 1;
   overflow: hidden;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .navbar {
     display: none;
   }
@@ -178,7 +196,7 @@ body {
   position: absolute;
   transform: translate(-300px);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .navbar__container {
     display: none;
   }
@@ -199,14 +217,36 @@ body {
   font-weight: 700;
   padding: 0.6rem 0;
 }
+.navbar__item:hover {
+  color: hsl(219deg, 9%, 45%);
+  text-decoration: underline;
+  text-underline-offset: 0.5rem;
+  text-decoration-color: hsl(26deg, 100%, 55%);
+  text-decoration-thickness: 3px;
+  transition: all 0.3s;
+}
+
+hr {
+  display: none;
+}
+@media screen and (min-width: 800px) {
+  hr {
+    display: block;
+    height: 2px;
+    border: none;
+    border-radius: 1rem;
+    background: rgba(182, 188, 200, 0.2);
+    width: 86%;
+  }
+}
 
 @media screen and (min-width: 1048px) {
   .desk {
     margin: 2rem auto 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     justify-content: center;
     align-items: center;
+    width: 90%;
   }
 }
 
@@ -216,10 +256,16 @@ body {
   margin: 1rem auto 0;
   position: relative;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .container {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
+  }
+}
+@media screen and (min-width: 1048px) {
+  .container {
+    margin-top: 0;
   }
 }
 .container__slider {
@@ -231,6 +277,7 @@ body {
   height: 290px;
   width: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 @media screen and (min-width: 550px) {
   .container__image {
@@ -240,9 +287,10 @@ body {
     border-radius: 1rem;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .container__image {
-    width: 24rem;
+    width: 26rem;
+    height: 380px;
   }
 }
 .container__btn {
@@ -254,7 +302,7 @@ body {
   padding: 0.5rem 0.7rem;
   cursor: pointer;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .container__btn {
     display: none;
   }
@@ -281,11 +329,11 @@ body {
 .container__row {
   display: none;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 800px) {
   .container__row {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     margin: 1.5rem auto 1rem;
   }
 }
@@ -297,7 +345,7 @@ body {
   border-radius: 0.7rem;
 }
 .container__demo {
-  width: 5rem;
+  width: 5.2rem;
   border-radius: 0.5rem;
   cursor: pointer;
 }
@@ -330,8 +378,8 @@ body {
 }
 @media screen and (min-width: 1048px) {
   .items__title-primary {
-    font-size: 2.3rem;
-    width: 55%;
+    font-size: 2.5rem;
+    width: 65%;
   }
 }
 .items__text {
@@ -341,7 +389,7 @@ body {
 }
 @media screen and (min-width: 1048px) {
   .items__text {
-    width: 55%;
+    width: 70%;
     line-height: 1.7;
     margin-top: 1.5rem;
   }
@@ -389,10 +437,16 @@ body {
     margin-bottom: 2rem;
   }
 }
-@media screen and (min-width: 1048px) {
+@media screen and (min-width: 800px) {
   .items__amount-button {
     width: 55%;
-    margin-top: 1rem;
+    margin: 0 auto 2rem;
+  }
+}
+@media screen and (min-width: 1048px) {
+  .items__amount-button {
+    width: 70%;
+    margin: 1rem 0;
     gap: 1rem;
   }
 }
@@ -412,12 +466,15 @@ body {
 }
 @media screen and (min-width: 1048px) {
   .items__amount {
-    width: 70%;
+    width: 65%;
   }
 }
 .items__icon {
   margin: 0 1rem;
   cursor: pointer;
+}
+.items__icon:hover {
+  opacity: 0.7;
 }
 @media screen and (min-width: 550px) {
   .items__icon {
@@ -441,6 +498,9 @@ body {
   border-radius: 0.7rem;
   box-shadow: 0 20px 25px rgba(255, 125, 26, 0.2);
 }
+.items__button:hover {
+  opacity: 0.7;
+}
 @media screen and (min-width: 550px) {
   .items__button {
     margin: 1rem auto 0;
@@ -458,11 +518,22 @@ body {
   left: 0;
   margin: auto;
   max-width: 22rem;
-  height: 42%;
+  height: 37vh;
   background: hsl(0deg, 0%, 100%);
   border-radius: 0.5rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   display: none;
+}
+@media screen and (min-width: 320px) {
+  .modal {
+    width: 95%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .modal {
+    top: 10%;
+    margin-right: 4rem;
+  }
 }
 .modal.block {
   display: block;
@@ -472,7 +543,9 @@ body {
 .modal__title {
   padding: 1.2rem 1.5rem 0.7rem;
 }
-.modal hr {
+.modal__linea {
+  display: block;
+  width: 100%;
   height: 1px;
   border: none;
   background: rgba(182, 188, 200, 0.5);
@@ -514,6 +587,11 @@ body {
 .modal__price {
   transform: translateX(-1rem);
 }
+@media screen and (min-width: 320px) {
+  .modal__price {
+    transform: translateX(0rem);
+  }
+}
 .modal__total {
   display: flex;
   gap: 0.5rem;
@@ -521,6 +599,10 @@ body {
 }
 .modal__delete {
   cursor: pointer;
+}
+.modal__delete:hover {
+  transform: scale(1.1);
+  opacity: 0.7;
 }
 .modal__button {
   display: block;
@@ -533,6 +615,112 @@ body {
   background: hsl(26deg, 100%, 55%);
   color: hsl(0deg, 0%, 100%);
   border-radius: 0.5rem;
+  cursor: pointer;
+}
+.modal__button:hover {
+  opacity: 0.7;
+}
+
+.lightbox {
+  display: none;
+}
+@media screen and (min-width: 800px) {
+  .lightbox {
+    flex-direction: column;
+    margin-top: 2rem;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(29, 32, 37, 0.8);
+  }
+}
+@media screen and (min-width: 1048px) {
+  .lightbox {
+    margin-top: 0;
+  }
+}
+.lightbox__slider {
+  animation: fadeIn;
+  animation-duration: 0.7s;
+}
+.lightbox__image {
+  display: none;
+}
+@media screen and (min-width: 800px) {
+  .lightbox__image {
+    position: relative;
+    display: block;
+    height: 290px;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    width: 26rem;
+    height: 400px;
+    margin: auto;
+    border-radius: 1rem;
+  }
+}
+.lightbox__btn {
+  display: none;
+}
+@media screen and (min-width: 1048px) {
+  .lightbox__btn {
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: hsl(0deg, 0%, 100%);
+    border-radius: 50%;
+    padding: 0.7rem 0.8rem;
+    cursor: pointer;
+  }
+}
+.lightbox__btn--left {
+  right: 50%;
+  transform: translate(14rem, -3rem);
+}
+.lightbox__btn--right {
+  left: 50%;
+  transform: translate(-14rem, -3rem);
+}
+.lightbox__icon-previous, .lightbox__icon-next {
+  width: 10px;
+}
+.lightbox__row {
+  display: none;
+}
+@media screen and (min-width: 800px) {
+  .lightbox__row {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 1.5rem auto 1rem;
+  }
+}
+.lightbox__column {
+  width: 100%;
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 0.6rem;
+}
+.lightbox__column.activo {
+  outline: 3px solid hsl(26deg, 100%, 55%);
+  border-radius: 0.7rem;
+}
+.lightbox__demo {
+  width: 5.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.lightbox__demo:hover {
+  opacity: 0.5;
+}
+.lightbox__demo.active {
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=main.css.map */
