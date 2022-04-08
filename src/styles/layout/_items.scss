@@ -180,11 +180,6 @@
         {
             margin: 1rem auto 0;
         }
-
-        @include break-point(portatil)
-        {
-            // width: 50%;
-        }
     }
 
     &__icon-cart

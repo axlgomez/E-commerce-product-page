@@ -55,6 +55,7 @@
 
         <div class="desk">
             <div class="container">
+                <!-- Images used to open the lightbox -->
                 <div class="container__sliders" id="slider">
                     <div class="container__slider">
                         <img class="container__image" src="/build/images/image-product-1.jpg" onclick="openModal();currentSlide(1)" alt="product-1">
@@ -141,6 +142,10 @@
         <!-- The Modal/Lightbox -->
 
         <div class="lightbox" id="myModal">
+            <span class="lightbox__close" onclick="closeModal()">
+            <img class="lightbox__close lightbox__close--img" src="/build/images/icon-close.svg" alt="icon-close">
+            </span>
+
             <div class="lightbox__sliders" id="slider">
                 <div class="lightbox__slider">
                     <img class="lightbox__image" src="/build/images/image-product-1.jpg" alt="product-1">
