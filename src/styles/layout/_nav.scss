@@ -13,6 +13,11 @@ body
     align-items: center;
     padding: 1rem 7%;
 
+    @include break-point(tablet)
+    {
+        padding: 1rem 9%;
+    }
+
     &__nav1
     {
         display: flex;
@@ -33,7 +38,6 @@ body
         {
             display: flex;
             align-items: center;
-            gap: 2rem;
         }
     }
 
@@ -87,6 +91,12 @@ body
     &__cart
     {
         cursor: pointer;
+        opacity: .7;
+
+        &:hover
+        {
+            opacity: 1;
+        }
     }
 
     &__amount
@@ -121,7 +131,7 @@ body
 
         @include break-point(tablet)
         {
-            width: 37px;
+            width: 42px;
         }
     }
 }
@@ -208,6 +218,7 @@ hr
         border: none;
         border-radius: 1rem;
         background: rgba($color: $grayish-blue, $alpha: .2);
-        width: 86%;
+        width: 82%;
+        transform: translateY(-.6rem);
     }
 }
