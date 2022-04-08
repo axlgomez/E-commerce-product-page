@@ -108,7 +108,7 @@ minus.addEventListener("click", ()=>{ decrease() });
 
 const cart = document.querySelector("#cart");
 
-cart.addEventListener("mouseover", ()=>{
+cart.addEventListener("click", ()=>{
   document.querySelector("#modal").classList.toggle("block");
 });
 
